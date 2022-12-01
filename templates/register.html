@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+{% block title %}
+<title>Reister</title>
+{% endblock title %}
+{% block body %}
+<div class="container">
+
+    <form action="/register" method="post">
+        
+        <h3 style="text-align:center;">Register Pages</h3>
+        <!-- Email input -->
+        <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Enter Name" name="name">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Enter Email" name="email">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+              <input type="number" class="form-control" placeholder="Enter Mobile No" name="mobile">
+            </div>
+            <div class="col">
+              <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+            </div>
+        </div>
+        <br>
+        <!-- 2 column grid layout for inline styling -->
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+    
+        <!-- Register buttons -->
+        <div class="text-center">
+        <p>Already a member ? <a href="/login">Login</a></p>
+        <p>or sign up with:</p>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+        </button>
+    
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-google"></i>
+        </button>
+    
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-twitter"></i>
+        </button>
+    
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-github"></i>
+        </button>
+        </div>
+    </form>
+</div>
+{% endblock body %}

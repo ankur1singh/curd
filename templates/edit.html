@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock title %}
+{% block body %}
+
+<div class="container">
+
+    <form action="/edit/{{profile.profile_id}}" method="post">
+        
+        <h3 style="text-align:center;">Profile Pages</h3>
+        <!-- Email input -->
+        <div class="row">
+            <div class="col">
+                <label for="formFile" class="form-label">User name</label>
+              <input type="text" class="form-control" placeholder="Enter Name" name="name" value="{{profile.name}}">
+            </div>
+            <div class="col">
+                <label for="formFile" class="form-label">Email</label>
+              <input type="text" class="form-control" placeholder="Enter Email" name="email" value="{{profile.email}}">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <label for="formFile" class="form-label">Mobile No</label>
+              <input type="number" class="form-control" placeholder="Enter Mobile No" name="mobile" value="{{profile.mobile}}">
+            </div>
+            <div class="col">
+                <label for="formFile" class="form-label">Date Of Birth</label>
+
+              <input type="date" class="form-control" placeholder="Enter Date Of Birth" name="dob" value="{{profile.dob}}">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <label for="formFile" class="form-label">Gender</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="gender">
+                    
+                    <option selected>select Gender</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="formFile" class="form-label">Education</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="education">
+                    <option selected>select Education</option>
+                    <option value="1">Deploma</option>
+                    <option value="2">Graguate</option>
+                    <option value="3">Post Graguate</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="formFile" class="form-label">Skill</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="skill">
+                    <option selected>select Skill</option>
+                    <option value="1">Communication</option>
+                    <option value="2">Project Management</option>
+                    <option value="3">Developer</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="formFile" class="form-label">Image</label>
+                <input class="form-control" type="file" id="formFile" name="image">
+              </div>
+        </div>
+        <!-- 2 column grid layout for inline styling -->
+        <!-- Submit button -->
+        <br>
+    
+        <!-- Register buttons -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+        
+        </div>
+    </form>
+</div>
+
+{% endblock body %}

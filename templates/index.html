@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock title %}
+{% block body %}
+<h1>Home Page  Details</h1>
+{% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+            <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                <strong>message</strong> {{message}}.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+    
+    <div class="container">
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for profile in data %}
+        <tr>
+           
+          <td>{{profile.name}}</td>
+          <td>{{profile.email}}</td>
+          <td>{{profile.mobile}}</td>
+          <td>{{profile.dob}}</td>
+          <td><a href="/edit/{{profile.profile_id}}"><button type="button" class="btn btn-primary">edit</button></a>
+          <a href="/delete/{{profile.profile_id}}"><button type="button" class="btn btn-danger">delete</button></a></td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+{% endblock body %}
